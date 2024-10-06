@@ -13,16 +13,16 @@
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Roboto",  sans-serif;
-  --nav-font: "Roboto",  sans-serif;
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Raleway",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #101f00; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #101f00; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #507a05; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --default-color: #2f3138; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0e1b4d; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #f82249; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -33,8 +33,8 @@
   --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #101f00; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #408e03; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #f82249; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -45,10 +45,10 @@
 }
 
 .dark-background {
-  --background-color: #101f00;
+  --background-color: #000820;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #203b01;
+  --surface-color: #001553;
   --contrast-color: #ffffff;
 }
 
@@ -84,7 +84,7 @@ h4,
 h5,
 h6 {
   color: var(--heading-color);
-  font-family: var(--default-font);
+  font-family: var(--heading-font);
 }
 
 /* Pulsating Play Button
@@ -287,7 +287,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(16, 31, 0, 0.82);
+  --background-color: rgba(1, 8, 33, 0.82);
 }
 
 /*--------------------------------------------------------------
@@ -326,6 +326,7 @@ h6 {
     font-size: 15px;
     padding: 0 2px;
     font-family: var(--nav-font);
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -515,12 +516,12 @@ h6 {
   }
 
   .navmenu .dropdown ul ul {
-    background-color: rgba(16, 31, 0, 0.1);
+    background-color: rgba(33, 37, 41, 0.1);
   }
 
   .navmenu .dropdown>.dropdown-active {
     display: block;
-    background-color: rgba(16, 31, 0, 0.03);
+    background-color: rgba(33, 37, 41, 0.03);
   }
 
   .mobile-nav-active {
@@ -541,7 +542,7 @@ h6 {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(16, 31, 0, 0.8);
+    background: rgba(33, 37, 41, 0.8);
     transition: 0.3s;
   }
 
@@ -762,7 +763,7 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  --background-color: #101f00;
+  --background-color: #000000;
   --heading-color: var(--contrast-color);
   --default-color: var(--contrast-color);
   color: var(--default-color);
@@ -785,7 +786,6 @@ h6 {
 .page-title h1 {
   font-size: 42px;
   font-weight: 700;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -835,16 +835,30 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  text-align: left;
+  text-align: center;
+  padding-bottom: 60px;
   position: relative;
 }
 
 .section-title h2 {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 700;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
   position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .section-title p {
@@ -935,7 +949,7 @@ section,
 }
 
 .hero .about-info h2 {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #fff;
@@ -950,7 +964,7 @@ section,
 }
 
 .hero .about-info p {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 20px;
   color: #fff;
 }
@@ -1313,8 +1327,8 @@ section,
 # Sponsors Section
 --------------------------------------------------------------*/
 .sponsors .clients-wrap {
-  border-top: 0px;
-  border-left: 0px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .sponsors .client-logo {
@@ -1322,6 +1336,8 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
+  border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   overflow: hidden;
 }
 
@@ -1669,6 +1685,6 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section .section .container p {
-  
+.starter-section {
+  /* Add your styles here */
 }
